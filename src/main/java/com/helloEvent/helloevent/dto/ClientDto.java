@@ -1,4 +1,69 @@
 package com.helloEvent.helloevent.dto;
 
+import com.helloEvent.helloevent.enums.Role;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+
 public class ClientDto {
+
+    private Long id;
+    private String userName;
+    private String passWord;
+    private String email;
+    private Role role;
+
+    public ClientDto(Long id, String userName, String passWord, String email, Role role) {
+        this.id = id;
+        this.userName = userName;
+        this.passWord = passWord;
+        this.email = email;
+        this.role = role;
+    }
+
+    public ClientDto() {
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

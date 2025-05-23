@@ -1,16 +1,32 @@
 package com.helloEvent.helloevent.Mapper;
 
 
-import com.helloEvent.helloevent.dto.AdminDto;
 import com.helloEvent.helloevent.dto.ClientDto;
-import com.helloEvent.helloevent.entity.Admin;
 import com.helloEvent.helloevent.entity.Client;
-import com.helloEvent.helloevent.repository.ClientRepo;
-import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
-public interface ClientMapper {
+@Component
+public class ClientMapper {
 
-    ClientDto toDto(Client client);
-    Client toEntity(ClientDto clientDto);
+    public static ClientDto toDTO(Client client) {
+        if(client == null) return null;
+        ClientDto clientDto = new ClientDto();
+        clientDto.setEmail(client.getEmail());
+        clientDto.setUserName(client.getUserName());
+        clientDto.setPassWord(client.getPassWord());
+        clientDto.setRole(client.getRole());
+        return clientDto;
+    }
+
+
+    public static Client toEntity(ClientDto dto) {
+        if (dto == null) return null;
+
+        Client client = new Client();
+        client.setEmail(dto.getEmail());
+        client.setUserName(dto.getUserName());
+        client.setPassWord(dto.getPassWord());
+        client.setRole(dto.getRole());
+        return client;
+    }
 }

@@ -8,11 +8,9 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Setter
-@Getter
+
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Admin extends User {
 
     @OneToMany(mappedBy = "admin")

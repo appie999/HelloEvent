@@ -1,4 +1,4 @@
 package com.helloEvent.helloevent.repository;
 
-public class AdminRepo {
+public interface AdminRepo {
 }

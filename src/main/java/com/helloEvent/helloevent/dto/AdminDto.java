@@ -11,6 +11,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminDto extends UserDto{
+public class AdminDto{
+    private Long id;
+    private String userName;
+    private String passWord;
+    private String email;
+
+    private Role role;
 
 }

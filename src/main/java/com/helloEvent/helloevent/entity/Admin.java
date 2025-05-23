@@ -15,6 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Admin extends User {
 
-    @OneToMany(mappedBy = "event")
+    @OneToMany(mappedBy = "admin")
     private List<Event> events;
 }

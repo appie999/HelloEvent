@@ -1,4 +1,7 @@
 package com.helloEvent.helloevent.repository;
 
-public interface AdminRepo {
+import com.helloEvent.helloevent.entity.Admin;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AdminRepo extends JpaRepository<Admin, Long> {
 }

@@ -18,10 +18,9 @@ import java.time.LocalDate;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+
     private Long id;
     private Long user_Id;
-    private Long event_Id;
     private LocalDate date;
 
 
@@ -30,4 +29,6 @@ public class Booking {
 
     @ManyToOne
     private Client client;
+
+
 }

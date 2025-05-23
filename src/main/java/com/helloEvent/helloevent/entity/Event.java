@@ -14,7 +14,6 @@ import java.util.List;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
     private String title;
     private String description;
@@ -27,5 +26,5 @@ public class Event {
     private List<Booking> bookings;
 
     @ManyToOne
-    private Event event;
+    private Admin admin;
 }

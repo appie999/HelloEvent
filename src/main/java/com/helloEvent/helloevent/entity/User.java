@@ -7,13 +7,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 
 
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public abstract class  User {
+public abstract class  User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -22,6 +22,7 @@ public abstract class  User implements UserDetails {
     private String passWord;
     private String email;
 
+    @Enumerated(EnumType.STRING)
     private Role role;
 
 

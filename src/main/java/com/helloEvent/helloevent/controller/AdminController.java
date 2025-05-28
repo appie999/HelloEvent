@@ -14,7 +14,7 @@ import java.util.List;
 public class AdminController {
 
     private final ClientService clientService;
-    private AdminService adminService;
+    private final AdminService adminService;
     private Role role;
 
     public AdminController(ClientService clientService, AdminService adminService) {

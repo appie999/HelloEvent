@@ -3,7 +3,7 @@ package com.helloEvent.helloevent.service;
 
 import com.helloEvent.helloevent.Mapper.ClientMapper;
 import com.helloEvent.helloevent.dto.ClientDto;
-import com.helloEvent.helloevent.entity.Client;
+//import com.helloEvent.helloevent.entity.Client;
 import com.helloEvent.helloevent.repository.ClientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,10 +1,8 @@
 package com.helloEvent.helloevent.entity;
 
+import com.helloEvent.helloevent.enums.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -13,12 +11,26 @@ import java.util.List;
 
 
 @Entity
+@Builder
 
 public class Admin extends User {
 
     @OneToMany(mappedBy = "admin")
     private List<Event> events;
 
+
+    public Admin(Long id, String userName, String passWord, String email, Role role, List<Event> events) {
+        super(id, userName, passWord, email, role);
+        this.events = events;
+    }
+
+    public Admin() {
+
+    }
+
+    public Admin(List<Event> events) {
+        this.events = events;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

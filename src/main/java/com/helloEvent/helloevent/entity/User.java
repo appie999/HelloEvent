@@ -3,15 +3,14 @@ package com.helloEvent.helloevent.entity;
 
 import com.helloEvent.helloevent.enums.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.userdetails.UserDetails;
 
+
+@Setter
+@Getter
 @Entity
-
-
+@Builder
 @Inheritance(strategy = InheritanceType.JOINED)
 
 public abstract class  User implements UserDetails {
@@ -37,43 +36,4 @@ public abstract class  User implements UserDetails {
     public User() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassWord() {
-        return passWord;
-    }
-
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
 }

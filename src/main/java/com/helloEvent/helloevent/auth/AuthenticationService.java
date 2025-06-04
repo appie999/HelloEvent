@@ -2,14 +2,11 @@ package com.helloEvent.helloevent.auth;
 
 
 import com.helloEvent.helloevent.entity.Admin;
-import com.helloEvent.helloevent.entity.User;
 import com.helloEvent.helloevent.enums.Role;
 import com.helloEvent.helloevent.repository.UserRepo;
 import com.helloEvent.helloevent.service.JwtService;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.SpringVersion;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-
 public class AuthenticationService {
 
 
@@ -36,9 +32,11 @@ public class AuthenticationService {
 
 
     public AuthenticationResponse register(RegisterRequest request) {
-
-        var user = Admin.builder()
-                        .build();
+        Admin user = new Admin();
+        user.setUserName( request.getUsername());
+         user.setEmail(request.getEmail());
+         user.setPassWord(passwordEncoder.encode(request.getPassword()));
+         user.setRole(Role.ADMIN);
 
         Repository.save(user);
 
@@ -63,5 +61,6 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .build();    }
+                .build();
+    }
 }

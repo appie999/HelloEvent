@@ -10,11 +10,9 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-
+@Builder
 
 public class Client extends User{
-
-
 
     @OneToMany(mappedBy ="client" )
     private List<Booking> bookings;
@@ -24,10 +22,6 @@ public class Client extends User{
 
     public Client(Long id, String userName, String passWord, String email, Role role, List<Booking> bookings) {
         super(id, userName, passWord, email, role);
-        this.bookings = bookings;
-    }
-
-    public Client(List<Booking> bookings) {
         this.bookings = bookings;
     }
 

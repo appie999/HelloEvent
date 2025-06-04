@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Setter
 @Getter
 @Entity
-@Builder
 @Inheritance(strategy = InheritanceType.JOINED)
 
 public abstract class  User implements UserDetails {
